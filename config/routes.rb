@@ -53,4 +53,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :users, only: [:index, :new, :create]
+  resources :friendships
+  root to: 'home#index'
+  get  '/login' => 'logins#new', as: 'logins'
+  post '/login' => 'logins#create'
+  delete '/' => 'logins#destroy'
 end

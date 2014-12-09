@@ -1,0 +1,8 @@
+<div class="container">
+<% if current_user.blank? %>
+  <%= render 'home/stranger_page' %>
+  <%= render 'posts/index' %>
+<% else %>
+  <%= render 'home/user_page' %>
+<% end %>
+</div> 

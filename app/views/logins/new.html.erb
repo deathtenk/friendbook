@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <%= form_tag logins_path, class: 'form-horizontal', role: 'form' do %>
+    <select name='user_id' id="user-id">
+      <% for user in @users %>
+        <option value="<%= user.id %>">
+          <%= user.name %> 
+        </option>
+      <% end %>
+    </select>
+    <%= submit_tag "Log In", class: 'btn btn-success' %>
+  <% end %>
+</div>

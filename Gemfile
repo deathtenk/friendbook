@@ -25,6 +25,22 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+gem 'pg'
+gem 'faker', group: :development
+gem 'pry', group: :development
+
+# twitter bootstrap css & javascript toolkit
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'autoprefixer-rails'
+# twitter bootstrap helpers gem, e.g., alerts etc...
+gem 'will_paginate-bootstrap'
+gem 'bootswatch-rails'
+gem 'twitter-bootswatch-rails-helpers'
+gem 'rails-assets-bootstrap'
+gem 'rails-assets-angular'
+gem 'rails-assets-leaflet'
+gem 'therubyracer'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

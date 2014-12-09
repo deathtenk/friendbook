@@ -1,0 +1,14 @@
+<h2>Your Friends</h2>
+<ul>
+  <% for friendship in current_user.friendships %>
+  <li><%= friendship.friend.name %></li>
+  <%= link_to "remove", friendship, method: :delete %>
+  <% end %>  
+</ul>
+<h2> Users who have Befriended You </h2>
+<ul>
+  <% for user in current_user.inverse_friends %>
+    <li> <%= user.name %> </li>
+    <%= link_to "Confirm", friendships_path(:friend_id => user), method: :post %>
+  <% end %>
+</ul>
