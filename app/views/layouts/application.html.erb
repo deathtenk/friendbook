@@ -8,7 +8,11 @@
     <%=csrf_meta_tags %>
   </head>
 <body>
-<%= render 'layouts/navbar' %>
+<% if current_user.blank? %>
+<%= render 'layouts/navbar_login' %>
+<% else %>
+<%= render 'layouts/navbar_logout' %>
+<% end %>
 
 <%= yield %>
 

@@ -2,5 +2,7 @@
 
 <% for user in @users %>
   <div> <%= user.name %> </div>
+  <% unless current_user.blank? %>
   <%= link_to "Add Friend", friendships_path(:friend_id => user), method: :post %>
+  <% end %>
 <% end %>

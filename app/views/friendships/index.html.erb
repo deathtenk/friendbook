@@ -1,14 +1,26 @@
 <h2>Your Friends</h2>
 <ul>
-  <% for friendship in current_user.friendships %>
-  <li><%= friendship.friend.name %></li>
-  <%= link_to "remove", friendship, method: :delete %>
-  <% end %>  
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-1">
+      <% unless current_user.friendships.empty? %>
+      <% for @friendship in current_user.friendships %>
+      <%= render 'friendships/friends_row' %>
+      <% end %>  
+      <% else %>
+      <div> empty! </div>
+      <% end %>
+    </div>
+  </div>
 </ul>
+<% unless current_user.inverse_friends.empty? %>
 <h2> Users who have Befriended You </h2>
 <ul>
-  <% for user in current_user.inverse_friends %>
-    <li> <%= user.name %> </li>
-    <%= link_to "Confirm", friendships_path(:friend_id => user), method: :post %>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-1">
+      <% for @inverse_friend in current_user.inverse_friends %>
+      <%=  render 'friendships/inverse_friends_row' %>
+      <% end %>
+    </div>
+  </div>
 </ul>
+<% end %>
